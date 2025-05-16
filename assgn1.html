@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eClerx Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splidejs@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 30px;
+            padding-left: 260px;
+            background-color: #f9f9f9;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        .sidebar h2 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 1px solid #555;
+            padding-bottom: 10px;
+        }
+        .sidebar a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            transition: background 0.3s, color 0.3s;
+            border-left: 5px solid gray;
+        }
+        .sidebar a.active {
+            background-color: #555;
+            color: #fff;
+            border-left: 5px solid #007bff;
+        }
+
+        .section {
+            padding: 60px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .social-icons a {
+            color: #555;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+        .splide__track{
+            margin: 0 70px;
+        }
+        .splide__slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .slide-content {
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 0 0 15px 15px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .hamburger {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        }
+        .hamburger:hover {
+            background-color: #555;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding-left: 0;
+            }
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <div class="sidebar">
+        <h2>Table of Contents</h2>
+        <div class="sidebar-items">
+            <a href="#about">About eClerx</a>
+            <a href="#services">Services</a>
+            <a href="#awards">Awards</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="about" class="section">
+            <h2>About eClerx</h2>
+            <p id="about-content">Loading...</p>
+        </div>
+        <div id="services" class="section">
+            <h2>Services</h2>
+            <p id="services-content">Loading...</p>
+        </div>
+        <div id="awards" class="section">
+            <h2>Awards</h2>
+            <div class="splide" id="award-slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="C:\Users\CSC\Downloads\Front end assignment\assets\chip-design-ai.png" alt="AI Technology">
+                            <div class="slide-content">
+                                <h3>AI Technology</h3>
+                                <p>Leading the future of artificial intelligence with innovative chip design.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="C:\Users\CSC\Downloads\Front end assignment\assets\ai-device-technology-laptop-1.webp" alt="AI Device">
+                            <div class="slide-content">
+                                <h3>AI Device</h3>
+                                <p>Empowering next-generation devices with cutting-edge AI technology.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="C:\Users\CSC\Downloads\Front end assignment\assets\GenAI360-BIG-Innovation-Award-2024-1-960x720.png" alt="GenAI360 Award">
+                            <div class="slide-content">
+                                <h3>GenAI360 Award</h3>
+                                <p>Recognized for excellence in AI innovation and industry leadership.</p>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <img src="C:\Users\CSC\Downloads\Front end assignment\assets\hero-cover.png" alt="AI Growth">
+                            <div class="slide-content">
+                                <h3>AI Growth</h3>
+                                <p>Accelerating business growth through intelligent AI solutions.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p id="contact-content">Loading...</p>
+            <div class="social-icons">
+                <a href="#" onclick="sharePage('facebook')"><i class="fab fa-facebook"></i></a>
+                <a href="#" onclick="sharePage('linkedin')"><i class="fab fa-linkedin"></i></a>
+                <a href="#" onclick="sharePage('twitter')"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-top" onclick="scrollToTop()">&uarr;</div>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/splidejs@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+         function toggleSidebar() {
+            // document.getElementById('sidebar').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) {
+                sidebar.classList.toggle('active');
+            
+            }
+        }
+        async function loadContent() {
+            try {
+                const aboutResponse = await fetch('https://eclerx.com/wp-json/wp/v2/posts/39145');
+                const aboutData = await aboutResponse.json();
+                document.getElementById('about-content').innerHTML = aboutData.content.rendered;
+                const servicesResponse = await fetch('https://eclerx.com/wp-json/wp/v2/posts/51641');
+                const servicesData = await servicesResponse.json();
+                document.getElementById('services-content').innerHTML = servicesData.content.rendered;
+                document.getElementById('contact-content').innerHTML = "You can reach us at contact@eclerx.com";
+            } catch (error) {
+                console.error('Error loading content:', error);
+            }
+        }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        const links = document.querySelectorAll('.sidebar a');
+        const sections = document.querySelectorAll('.section');
+        window.addEventListener('scroll', function() {
+            document.querySelector('.back-to-top').style.display = window.scrollY > 300 ? 'block' : 'none';
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                    toggleSidebar();
+                }
+            });
+        });
+        loadContent();
+        document.addEventListener("DOMContentLoaded", function() {
+        new Splide('#award-slider', {
+            type: 'loop',
+            perPage: 3,
+            perMove: 1,
+            gap: '20px',
+            breakpoints: {
+                768: { perPage: 1 }
+            }
+        }).mount();
+    });
+
+    function sharePage(platform) {
+            if (platform === 'facebook') {
+                shareUrl = `https://www.facebook.com/eclerxservices`;
+            } else if (platform === 'linkedin') {
+                shareUrl = `https://www.linkedin.com/company/eclerx/`;
+            } else if (platform === 'twitter') {
+                shareUrl = `https://x.com/eClerx`;
+            }
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+    </script>
+</body>
+</html>
